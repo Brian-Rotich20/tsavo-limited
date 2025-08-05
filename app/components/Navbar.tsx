@@ -218,15 +218,19 @@ const Navbar: React.FC = () => {
       {isMobileMenuOpen && (
         <div className="lg:hidden fixed inset-y-0 left-0 w-3/4 bg-white shadow-xl border-r border-gray-200 z-40 overflow-y-auto">
           <div className="px-4 py-6 space-y-3">
+
             {/* Mobile Contact & Feedback Buttons */}
-            <div className="flex space-x-2 mb-4 pb-4 border-b border-gray-200">
-              <button className="flex-1 px-3 py-2 text-xs font-medium text-white bg-gradient-to-r from-red-500 to-red-700 hover:from-red-600 hover:to-orange-600 rounded-md transition-all duration-200 border border-transparent">
+
+
+           <div className="flex space-x-2 mb-4 pb-4 border-b border-gray-200">      
+            <button className="flex-1 px-3 py-2 text-xs font-medium text-white bg-gradient-to-r from-red-500 to-red-700 hover:from-red-600 hover:to-orange-600 rounded-md transition-all duration-200 border border-transparent">
               Contact
+            </button>      
+            <button className="flex-1 px-3 py-2 text-xs font-medium text-gray-700 hover:text-white hover:bg-gradient-to-r hover:from-red-600 hover:to-orange-600 rounded-md transition-all duration-200 border border-gray-300">
+              Feedback
             </button>
-              <button className="flex-1 px-3 py-2 text-xs font-medium text-gray-700 hover:text-white hover:bg-gradient-to-r hover:from-red-600 hover:to-orange-600 rounded-md transition-all duration-200 border border-gray-300">
-                Feedback
-              </button>
-            </div>
+          </div>
+
 
             {navigationItems.map((item) => (
               <div key={item.name} className="border-b border-gray-100 pb-3 last:border-b-0">

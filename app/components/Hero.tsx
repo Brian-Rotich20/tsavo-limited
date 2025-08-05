@@ -27,7 +27,7 @@ const ServiceIcon: React.FC<ServiceIconProps> = ({ icon, label, delay }) => {
           : 'translate-x-8 opacity-0'
       } hover:scale-105 hover:shadow-xl`}
     >
-      <div className="w-12 h-12 mb-3 text-blue-600 flex items-center justify-center">
+      <div className="w-12 h-12 mb-3 text-orange-600 flex items-center justify-center">
         {icon}
       </div>
       <span className="text-sm font-medium text-gray-700 text-center">{label}</span>
@@ -99,7 +99,7 @@ const HeroSection: React.FC = () => {
                 : 'translate-y-8 opacity-0'
             }`}
           >
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-600 via-yellow-600 to-orange-600 bg-clip-text text-transparent">
               High-Quality Prints.
             </span>
             <br />
