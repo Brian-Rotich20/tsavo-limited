@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       {/* Top Contact Bar */}
-      <div className="bg-gradient-to-r from-gray-800 to-gray-700 text-white py-2 hidden md:block">
+      <div className="bg-gradient-to-r from-gray-100 to-gray-200 text-grey-200 font-semibold py-1 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-6">
@@ -130,10 +130,10 @@ const Navbar: React.FC = () => {
             <div className="flex-shrink-0">
               <div className="flex flex-col">
                 <div className="text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
-                  Tsavo Print
+                  Tsavo 
                 </div>
-                <div className="text-xs text-gray-500 -mt-1 font-medium">
-                  & E-design Ltd
+                <div className="text-xs text-pink-600 -mt-1 font-medium">
+                 Print & E-design Ltd
                 </div>
               </div>
             </div>
@@ -143,7 +143,7 @@ const Navbar: React.FC = () => {
               {/* Home Link */}
               <a 
                 href="/" 
-                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-white hover:bg-gradient-to-r hover:from-red-600 hover:to-orange-500 rounded-md transition-all duration-200"
+                className="px-4 py-2 text-sm font-medium text-grey-900 hover:bg-black hover:text-white rounded-md transition-all duration-200"
               >
                 Home
               </a>
@@ -154,7 +154,7 @@ const Navbar: React.FC = () => {
                 onMouseEnter={() => handleMouseEnter('categories')}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:text-white hover:bg-gradient-to-r hover:from-red-600 hover:to-orange-500 rounded-md transition-all duration-200">
+                <button className="flex items-center px-4 py-2 text-sm font-medium text-grey-900 hover:bg-black hover:text-white rounded-md transition-all duration-200">
                   Our Services
                   <ChevronDown size={16} className="ml-1 transform group-hover:rotate-180 transition-transform duration-200" />
                 </button>
@@ -173,7 +173,7 @@ const Navbar: React.FC = () => {
                               <li key={item.name}>
                                 <a
                                   href={item.href}
-                                  className="block text-xs text-gray-600 hover:text-red-600 hover:bg-gray-50 px-2 py-1 rounded transition-colors duration-150"
+                                  className="block text-xs text-grey-900 hover:bg-black hover:text-white  px-2 py-1 rounded transition-colors duration-150"
                                 >
                                   {item.name}
                                 </a>
@@ -190,7 +190,7 @@ const Navbar: React.FC = () => {
               {/* About Link */}
               <a 
                 href="/about" 
-                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-white hover:bg-gradient-to-r hover:from-red-600 hover:to-orange-500 rounded-md transition-all duration-200"
+                className="px-4 py-2 text-sm font-medium  text-grey-900 hover:bg-black hover:text-white  rounded-md transition-all duration-200"
               >
                 About
               </a>
@@ -198,7 +198,7 @@ const Navbar: React.FC = () => {
               {/* Contact Link */}
               <a 
                 href="/contact" 
-                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-white hover:bg-gradient-to-r hover:from-red-600 hover:to-orange-500 rounded-md transition-all duration-200"
+                className="px-4 py-2 text-sm font-medium text-grey-900 hover:bg-black hover:text-white  rounded-md transition-all duration-200"
               >
                 Contact
               </a>
@@ -207,12 +207,12 @@ const Navbar: React.FC = () => {
             {/* Right Side Actions */}
             <div className="flex items-center space-x-3">
               {/* Get Quote Button */}
-              <button className="hidden sm:block px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 rounded-md transition-all duration-200 shadow-md">
+              <button className="hidden sm:block px-4 py-2 text-sm font-medium text-white bg-black hover:bg-gray-900 rounded-md transition-all duration-200 shadow-md">
                 Feedback
               </button>
 
               {/* Cart Icon */}
-              <button className="relative p-2 text-gray-700 hover:text-white hover:bg-gradient-to-r hover:from-red-600 hover:to-orange-500 rounded-md transition-all duration-200">
+              <button className="relative p-2 text-grey-900 hover:bg-black hover:text-white  rounded-md transition-all duration-200">
                 <ShoppingCart size={20} />
                 <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium">
                   0
@@ -252,7 +252,7 @@ const Navbar: React.FC = () => {
                   <span>info@tsavoprint.co.ke</span>
                 </div>
               </div>
-              <button className="w-full mt-3 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-md">
+              <button className="w-full mt-3 px-4 py-2 text-sm font-medium text-grey-900 bg-black text-white rounded-md">
               Feedback
               </button>
             </div>

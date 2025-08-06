@@ -38,40 +38,34 @@ useEffect(() => {
   const el = scrollRef.current;
   if (!el) return;
 
-  // Disable default wheel scroll on carousel
-  const wheelHandler = (e: WheelEvent) => e.preventDefault();
-  el.addEventListener("wheel", wheelHandler, { passive: false });
+  const handleWheelScroll = (e: WheelEvent) => {
+    if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return; // Skip horizontal gestures
 
-  // New: On window scroll, auto-scroll the carousel slightly
-const handleScroll = () => {
-  const currentScroll = window.scrollY;
-const lastScrollY = useRef(0);
-
-  // Only scroll if user scrolled down and by more than 100px
-  if (currentScroll - lastScrollY.current > 100) {
-    const nextIndex = Math.min(activeIndex + 2, services.length - 1);
-    scrollRef.current?.scrollTo({
-      left: nextIndex * cardWidth,
+    const direction = e.deltaY > 0 ? 1 : -1;
+    const newIndex = Math.min(
+      Math.max(activeIndex + direction, 0),
+      services.length - 1
+    );
+    setActiveIndex(newIndex);
+    el.scrollTo({
+      left: newIndex * cardWidth,
       behavior: "smooth",
     });
-    setActiveIndex(nextIndex);
-    lastScrollY.current = currentScroll; // update last scroll position
-  }
-};
+  };
 
 
-  window.addEventListener("scroll", handleScroll);
+  el.addEventListener("wheel", handleWheelScroll);
 
   return () => {
-    el.removeEventListener("wheel", wheelHandler);
-    window.removeEventListener("scroll", handleScroll);
+    el.removeEventListener("wheel", handleWheelScroll);
   };
 }, [activeIndex]);
+
 
   return (
     <section className="relative py-16 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-500 mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">
           Our Printing Services
         </h2>
 

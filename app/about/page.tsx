@@ -1,11 +1,19 @@
+// AboutPage.js
 import Goals from "../components/Goals";
 import Belief from "../components/Beliefs";
+
 export default function AboutPage() {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-16">
+    <div className="min-h-screen">
+      {/* Page Header */}
      
+      
+      {/* Content Sections */}
       <Goals />
-        <Belief />
+      <Belief />
+      
+      {/* Bottom Separator */}
+      <div className="h-20 bg-gradient-to-b from-white to-slate-50"></div>
     </div>
   );
 }

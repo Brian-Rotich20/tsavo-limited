@@ -2,112 +2,105 @@
 import Image from 'next/image';
 
 const MarketingCardsSection = () => {
-  // Sample card data - replace with your actual data
   const cards = [
     {
       id: 1,
       title: "Ballpen Branding",
-      description: "Premium quality business cards with multiple finish options",
+      description: "Custom branded pens for your business",
       image: "/ballpen-branding1.jpeg",
-      category: "Digital Printing"
+      category: "Corporate Branding"
     },
     {
       id: 2,
       title: "Bottle Branding",
-      description: "Eye-catching brochures for effective marketing campaigns",
+      description: "Personalized water bottles with your logo",
       image: "/bottle-branding.jpeg",
-      category: "Offset Printing"
+      category: "Corporate Branding"
     },
     {
       id: 3,
       title: "Catalogue",
-      description: "Large format banners for events and promotions",
+      description: "Detailed product or service listings",
       image: "/catalogue.jpeg",
       category: "Business Catalogue"
     },
-    {
-      id: 4,
-      title: "Flyers",
-      description: "High-impact flyers to boost your promotional activities",
-      image: "/api/placeholder/300/200",
-      category: "Digital Printing"
-    },
+    
     {
       id: 5,
       title: "Clock Branding",
-      description: "Vibrant posters that capture attention instantly",
+      description: "Customized clocks with company logos",
       image: "/clock-branding.jpeg",
-      category: "Offset Printing"
+      category: "Corporate Gifts"
     },
     {
       id: 6,
       title: "Company Reports",
-      description: "Custom printed t-shirts with premium quality materials",
+      description: "Professional business documentation",
       image: "/company-reports.jpeg",
-      category: "Sublimation Printing"
+      category: "Corporate Printing"
     },
     {
       id: 7,
       title: "Coupons",
-      description: "Personalized mugs perfect for corporate gifts",
+      description: "Printed discount or promo vouchers",
       image: "/coupons.jpg",
-      category: "Sublimation Printing"
+      category: "Marketing Materials"
     },
     {
       id: 8,
       title: "Catalogs",
-      description: "Professional catalogs to showcase your products",
+      description: "Product showcase in print format",
       image: "/catalogue.jpeg",
-      category: "Offset Printing"
+      category: "Business Catalogue"
     },
     {
       id: 9,
       title: "Diary & Notebooks Branding",
-      description: "Professional catalogs to showcase your products",
+      description: "Branded diaries for promotional use",
       image: "/diary-branding1.jpeg",
-      category: "Offset Printing"
+      category: "Corporate Gifts"
     },
     {
       id: 10,
       title: "Event Tickets",
-      description: "Professional catalogs to showcase your products",
+      description: "Printed passes for events and shows",
       image: "/event-tickets.jpg",
-      category: "Offset Printing"
+      category: "Event Printing"
     },
     {
-        id: 10,
-        title: "Flash & Keyholders",
-        description: "Professional catalogs to showcase your products",
-        image: "/flash-keyholders2.jpeg",
-        category: "Offset Printing"
+      id: 11,
+      title: "Flash & Keyholders",
+      description: "Custom USBs and branded keychains",
+      image: "/flash-keyholders2.jpeg",
+      category: "Branded Accessories"
     },
-        {
-      id: 10,
+    {
+      id: 12,
       title: "Mug & Water Bottle Branding",
-      description: "Professional catalogs to showcase your products",
+      description: "Drinkware printed with your logo",
       image: "/mugs.jpeg",
-      category: "Offset Printing"
+      category: "Corporate Gifts"
     },
-        {
-      id: 10,
+    {
+      id: 13,
       title: "Picture Frames",
-      description: "Professional catalogs to showcase your products",
+      description: "Custom frames for office or gifts",
       image: "/picture-frame.jpeg",
-      category: "Offset Printing"
+      category: "Personalized Gifts"
     },
-         {
-      id: 10,
+    {
+      id: 14,
       title: "Umbrella Branding",
-      description: "Professional catalogs to showcase your products",
+      description: "Rain gear with custom prints",
       image: "/umbrella.jpeg",
-      category: "Offset Printing"
+      category: "Outdoor Branding"
     },
-     {
-      id: 2,
+    {
+      id: 15,
       title: "Newsletters",
-      description: "Eye-catching brochures for effective marketing campaigns",
+      description: "Printed updates for your audience",
       image: "/newsletter.jpg",
-      category: "Offset Printing"
+      category: "Publications"
     }
   ];
 
