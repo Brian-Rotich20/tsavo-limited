@@ -137,7 +137,7 @@ const lastScrollY = useRef(0);
                   });
                 }
               }}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
                 i === activeIndex
                   ? "bg-red-600 scale-110"
                   : "bg-gray-300 hover:bg-gray-400"
