@@ -1,6 +1,7 @@
 'use client';
+import Link from "next/link"
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronDown, Menu, X, ShoppingCart, Phone, Mail, MapPin } from 'lucide-react';
+import { ChevronDown, ChevronUp, Menu, X, ShoppingCart, Phone, Mail, MapPin } from 'lucide-react';
 
 interface DropdownItem {
   name: string;
@@ -15,6 +16,7 @@ interface Category {
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Organized categories for better navigation
@@ -87,6 +89,10 @@ const Navbar: React.FC = () => {
     }, 200);
   };
 
+  const toggleMobileDropdown = (categoryName: string) => {
+    setActiveMobileDropdown(activeMobileDropdown === categoryName ? null : categoryName);
+  };
+
   useEffect(() => {
     return () => {
       if (timeoutRef.current) {
@@ -98,7 +104,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       {/* Top Contact Bar */}
-      <div className="bg-gradient-to-r from-gray-100 to-gray-200 text-grey-200 font-semibold py-1 hidden md:block">
+      <div className=" bg-black text-white font-mono py-1 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-6">
@@ -141,12 +147,12 @@ const Navbar: React.FC = () => {
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-1">
               {/* Home Link */}
-              <a 
+              <Link 
                 href="/" 
                 className="px-4 py-2 text-sm font-medium text-grey-900 hover:bg-black hover:text-white rounded-md transition-all duration-200"
               >
                 Home
-              </a>
+              </Link>
 
               {/* Categories Dropdown */}
               <div
@@ -159,24 +165,24 @@ const Navbar: React.FC = () => {
                   <ChevronDown size={16} className="ml-1 transform group-hover:rotate-180 transition-transform duration-200" />
                 </button>
 
-                {/* Mega Dropdown Menu */}
+                {/* Mega Dropdown Menu - Improved visibility */}
                 {activeDropdown === 'categories' && (
-                  <div className="absolute top-full left-0 mt-1 w-96 bg-white rounded-lg shadow-xl border border-gray-200 py-4 z-50">
-                    <div className="grid grid-cols-2 gap-4 px-4">
+                  <div className="absolute top-full left-0 mt-1 w-[500px] bg-white rounded-lg shadow-2xl border border-gray-200 py-6 z-50">
+                    <div className="grid grid-cols-2 gap-6 px-6">
                       {categories.map((category) => (
-                        <div key={category.name} className="space-y-2">
-                          <h3 className="text-sm font-semibold text-gray-800 border-b border-gray-200 pb-1">
+                        <div key={category.name} className="space-y-3">
+                          <h3 className="text-sm font-semibold text-gray-800 border-b border-gray-200 pb-2">
                             {category.name}
                           </h3>
-                          <ul className="space-y-1">
+                          <ul className="space-y-2">
                             {category.items.map((item) => (
                               <li key={item.name}>
-                                <a
+                                <Link
                                   href={item.href}
-                                  className="block text-xs text-grey-900 hover:bg-black hover:text-white  px-2 py-1 rounded transition-colors duration-150"
+                                  className="block text-sm text-grey-900 hover:bg-black hover:text-white px-3 py-2 rounded transition-colors duration-150"
                                 >
                                   {item.name}
-                                </a>
+                                </Link>
                               </li>
                             ))}
                           </ul>
@@ -188,20 +194,20 @@ const Navbar: React.FC = () => {
               </div>
 
               {/* About Link */}
-              <a 
+              <Link 
                 href="/about" 
                 className="px-4 py-2 text-sm font-medium  text-grey-900 hover:bg-black hover:text-white  rounded-md transition-all duration-200"
               >
                 About
-              </a>
+              </Link>
 
               {/* Contact Link */}
-              <a 
+              <Link 
                 href="/contact" 
                 className="px-4 py-2 text-sm font-medium text-grey-900 hover:bg-black hover:text-white  rounded-md transition-all duration-200"
               >
                 Contact
-              </a>
+              </Link>
             </div>
 
             {/* Right Side Actions */}
@@ -236,10 +242,22 @@ const Navbar: React.FC = () => {
         <div className="lg:hidden fixed inset-0  bg-opacity-50 z-40" onClick={() => setIsMobileMenuOpen(false)} />
       )}
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Moved to right side */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-y-0 left-0 w-80 max-w-full bg-white shadow-xl z-50 overflow-y-auto">
+        <div className="lg:hidden fixed inset-y-0 right-0 w-80 max-w-full bg-white shadow-xl z-50 overflow-y-auto">
           <div className="px-4 py-6">
+            {/* Logo in Mobile Menu */}
+            <div className="flex justify-center mb-6 pb-4 border-b border-gray-200">
+              <div className="flex flex-col text-center">
+                <div className="text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
+                  Tsavo 
+                </div>
+                <div className="text-xs text-pink-600 -mt-1 font-medium">
+                 Print & E-design Ltd
+                </div>
+              </div>
+            </div>
+
             {/* Mobile Contact Info */}
             <div className="bg-gray-50 rounded-lg p-4 mb-6">
               <div className="space-y-2 text-sm">
@@ -257,43 +275,72 @@ const Navbar: React.FC = () => {
               </button>
             </div>
 
-            {/* Mobile Navigation Links */}
+            {/* Mobile Navigation Links with Dividers */}
             <div className="space-y-1 mb-6">
-              <a href="/" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md">
+              <Link 
+                href="/" 
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 Home
-              </a>
-              <a href="/about" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md">
+              </Link>
+              <div className="border-t border-gray-200 my-2"></div>
+              
+              <Link 
+                href="/about" 
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 About
-              </a>
-              <a href="/contact" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md">
-                Contact
-              </a>
-            </div>
+              </Link>
+              <div className="border-t border-gray-200 my-2"></div>
 
-            {/* Mobile Categories */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-800 border-b border-gray-200 pb-2">
-                Our Services
-              </h3>
-              {categories.map((category) => (
-                <div key={category.name} className="border-b border-gray-100 pb-4 last:border-b-0">
-                  <div className="font-medium text-gray-800 bg-gray-50 px-3 py-2 rounded-md mb-2 text-sm">
-                    {category.name}
+              {/* OUR CATEGORIES Section */}
+              <div className="space-y-2">
+                <h3 className="text-lg font-semibold text-gray-800 px-3 py-2">
+                  OUR CATEGORIES
+                </h3>
+                {categories.map((category) => (
+                  <div key={category.name} className="border-b border-gray-100 pb-2 last:border-b-0">
+                    <button
+                      onClick={() => toggleMobileDropdown(category.name)}
+                      className="w-full flex items-center justify-between px-3 py-2 text-left text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md"
+                    >
+                      {category.name}
+                      {activeMobileDropdown === category.name ? (
+                        <ChevronUp size={16} />
+                      ) : (
+                        <ChevronDown size={16} />
+                      )}
+                    </button>
+                    
+                    {activeMobileDropdown === category.name && (
+                      <div className="ml-4 mt-2 space-y-1">
+                        {category.items.map((item) => (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            className="block px-3 py-2 text-sm text-gray-600 hover:text-red-600 hover:bg-gray-50 rounded-md transition-colors duration-150"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                  <div className="grid grid-cols-1 gap-1 pl-2">
-                    {category.items.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className="block px-3 py-2 text-sm text-gray-600 hover:text-red-600 hover:bg-gray-50 rounded-md transition-colors duration-150"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
+              
+              <div className="border-t border-gray-200 my-2"></div>
+              
+              <Link 
+                href="/contact" 
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </Link>
             </div>
           </div>
         </div>
