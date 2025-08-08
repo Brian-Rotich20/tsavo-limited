@@ -9,25 +9,25 @@ export default function Belief() {
       title: "BULK PRINTING",
       icon: <Layers className="w-6 h-6" />,
       description: "We design and print in bulk. We assess the volume of work and set a clear deadline for the production and delivery",
-      color: "from-blue-600 to-cyan-600"
+      color: "bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900"
     },
     {
       title: "COMPETITIVE DESIGN",
       icon: <MonitorSmartphone className="w-6 h-6" />,
       description: "We have creative design ideas within our company because we invest in research and trends to give you an edge in the market",
-      color: "from-purple-600 to-pink-600"
+      color: "bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900"
     },
     {
       title: "QUICK TURNAROUND",
       icon: <RefreshCcw className="w-6 h-6" />,
       description: "We have quick turn around times for projects that we handle. Once we get your approval, we ensure your timeliness are met",
-      color: "from-green-600 to-emerald-600"
+      color: "bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900"
     },
     {
       title: "QUALITY",
       icon: <Award className="w-6 h-6" />,
       description: "Our process of work handling and production at Tsavol Print ensures quality work is produced",
-      color: "from-orange-600 to-red-600"
+      color: "bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900"
     },
   ]
 
@@ -39,7 +39,7 @@ export default function Belief() {
           <h2 className="text-4xl md:text-5xl font-light text-slate-800 tracking-wide mb-4">
             What We Stand For
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-600 mx-auto rounded-full mb-6"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-orange-600 to-yellow-700 mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
             Our foundation is built on strong values and unwavering commitment to excellence
           </p>

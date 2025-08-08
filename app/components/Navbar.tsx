@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
         { name: 'Road & Outdoor Signs', href: '/signage/road' },
         { name: 'Window Signage', href: '/signage/window' },
         { name: '3D & Lightboxes', href: '/signage/3d' },
-        { name: 'Safety Signs', href: '/signage/safety' },
+        { name: '3D Signs', href: '/signage/signs' },
         { name: 'Wall Posters', href: '/signage/posters' },
       ]
     },
@@ -67,11 +67,12 @@ const Navbar: React.FC = () => {
     {
       name: 'Apparel & Branding',
       items: [
-        { name: 'Embroidery', href: '/apparel/embroidery' },
         { name: 'Screen Printing', href: '/apparel/screen-printing' },
         { name: 'Reflective Jackets', href: '/apparel/jackets' },
         { name: 'Bag Branding', href: '/apparel/bags' },
         { name: 'Vehicle Branding', href: '/apparel/vehicle' },
+        { name: 'T-Shirt Printing', href: '/apparel/t-shirts' },
+        { name: 'Bottle Branding', href: '/apparel/bottle' },
       ]
     }
   ];
@@ -215,14 +216,6 @@ const Navbar: React.FC = () => {
               {/* Get Quote Button */}
               <button className="hidden sm:block px-4 py-2 text-sm font-medium text-white bg-black hover:bg-gray-900 rounded-md transition-all duration-200 shadow-md">
                 Feedback
-              </button>
-
-              {/* Cart Icon */}
-              <button className="relative p-2 text-grey-900 hover:bg-black hover:text-white  rounded-md transition-all duration-200">
-                <ShoppingCart size={20} />
-                <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium">
-                  0
-                </span>
               </button>
 
               {/* Mobile menu button */}
