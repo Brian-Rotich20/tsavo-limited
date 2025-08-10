@@ -6,12 +6,15 @@ import Link from 'next/link';
 import { ArrowLeft, Check, Phone, Mail } from 'lucide-react';
 
 interface SignagePageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export default function SignageProductPage({ params }: SignagePageProps) {
+export default async function SignageProductPage({ params }: SignagePageProps) {
+  const { slug } = await params;
+  
+  // Find the product based on slug and category
   const product = products.find(p => 
-    p.category === 'signage' && p.id === params.slug
+    p.category === 'signage' && p.id === slug
   );
 
   if (!product) {
