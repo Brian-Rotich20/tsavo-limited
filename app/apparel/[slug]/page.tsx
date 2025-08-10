@@ -6,17 +6,20 @@ import Link from 'next/link';
 import { ArrowLeft, Check, Phone, Mail } from 'lucide-react';
 
 interface ApparelPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export default function ApparelProductPage({ params }: ApparelPageProps) {
+export default async function ApparelProductPage({ params }: ApparelPageProps) {
+  const { slug } = await params;
+  
   const product = products.find(p => 
-    p.category === 'apparel' && p.id === params.slug
+    p.category === 'apparel' && p.id === slug
   );
 
   if (!product) {
     notFound();
   }
+
 
   return (
     <div className="min-h-screen bg-white">
