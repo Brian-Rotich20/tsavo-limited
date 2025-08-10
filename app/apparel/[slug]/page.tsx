@@ -3,7 +3,7 @@ import { products } from '../../data/products';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, Check, Phone, Mail } from 'lucide-react';
+import { ArrowLeft, Check} from 'lucide-react';
 
 interface ApparelPageProps {
   params: Promise<{ slug: string }>;

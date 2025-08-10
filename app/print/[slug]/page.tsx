@@ -3,15 +3,17 @@ import { products } from '../../data/products';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, Check, Phone, Mail } from 'lucide-react';
+import { ArrowLeft, Check } from 'lucide-react';
 
 interface PrintPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export default function PrintProductPage({ params }: PrintPageProps) {
+export default async function PrintProductPage({ params }: PrintPageProps) {
+  const { slug } = await params;
+
   const product = products.find(p => 
-    p.category === 'print' && p.id === params.slug
+    p.category === 'print' && p.id === slug
   );
 
   if (!product) {
