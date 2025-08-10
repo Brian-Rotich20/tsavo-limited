@@ -6,12 +6,13 @@ import Link from 'next/link';
 import { ArrowLeft, Check, Phone, Mail } from 'lucide-react';
 
 interface PromoPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export default function PromoProductPage({ params }: PromoPageProps) {
+export default async function PromoProductPage({ params }: PromoPageProps) {
+  const { slug } = await params;
   const product = products.find(p => 
-    p.category === 'promo' && p.id === params.slug
+    p.category === 'promo' && p.id === slug
   );
 
   if (!product) {

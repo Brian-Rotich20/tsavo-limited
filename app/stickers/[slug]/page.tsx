@@ -6,12 +6,13 @@ import Link from 'next/link';
 import { ArrowLeft, Check, Phone, Mail } from 'lucide-react';
 
 interface StickPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export default function StickerProductPage({ params }: StickPageProps) {
+export default async function StickerProductPage({ params }: StickPageProps) {
+  const { slug } = await params;
   const product = products.find(p => 
-    p.category === 'stickers' && p.id === params.slug
+    p.category === 'stickers' && p.id === slug
   );
 
   if (!product) {
