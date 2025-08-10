@@ -5,11 +5,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, Check, Phone, Mail } from 'lucide-react';
 
-interface PageProps {
+interface StickPageProps {
   params: { slug: string };
 }
 
-export default function StickerProductPage({ params }: PageProps) {
+export default function StickerProductPage({ params }: StickPageProps) {
   const product = products.find(p => 
     p.category === 'stickers' && p.id === params.slug
   );

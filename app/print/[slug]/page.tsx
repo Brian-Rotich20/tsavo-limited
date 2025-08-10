@@ -5,11 +5,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, Check, Phone, Mail } from 'lucide-react';
 
-interface PageProps {
+interface PrintPageProps {
   params: { slug: string };
 }
 
-export default function PrintProductPage({ params }: PageProps) {
+export default function PrintProductPage({ params }: PrintPageProps) {
   const product = products.find(p => 
     p.category === 'print' && p.id === params.slug
   );

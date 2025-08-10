@@ -5,11 +5,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, Check, Phone, Mail } from 'lucide-react';
 
-interface PageProps {
+interface SignagePageProps {
   params: { slug: string };
 }
 
-export default function SignageProductPage({ params }: PageProps) {
+export default function SignageProductPage({ params }: SignagePageProps) {
   const product = products.find(p => 
     p.category === 'signage' && p.id === params.slug
   );
