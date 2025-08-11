@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"], // include weights you plan to use
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -24,9 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} font-sans antialiased`}>
-        <Navbar />
-        {children}
-        <Footer />
+            <Navbar />
+            {children}
+            <Footer />
       </body>
     </html>
   );

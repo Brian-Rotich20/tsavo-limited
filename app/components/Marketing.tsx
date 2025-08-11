@@ -78,7 +78,7 @@ const MarketingCardsSection = () => {
       id: 12,
       title: "Mug & Water Bottle Branding",
       description: "Drinkware printed with your logo",
-      image: "/mugs.jpeg",
+      image: "/bottle.jpg",
       category: "Corporate Gifts"
     },
     {

@@ -4,10 +4,12 @@ import Image from "next/image";
 import { useRef } from "react";
 
 const banners = [
-  { id: 1, title: "Rollup Banners", image: "/rollup.jpg" },
+  { id: 1, title: "Rollup Banners", image: "/roll.jpg" },
   { id: 2, title: "Teardrop Banners", image: "/teardrop-banner.jpeg" },
   { id: 3, title: "Wall Posters", image: "/wall-posters.jpeg" },
   { id: 4, title: "3D Signage", image: "/3d.jpeg" },
+  { id: 5, title: "3D Road Signage", image: "/road-signage1.jpg" },
+  { id: 6, title: "Hotel Menu Banners", image: "/hotel.jpg" },
 ];
 
 export default function BannerSection() {

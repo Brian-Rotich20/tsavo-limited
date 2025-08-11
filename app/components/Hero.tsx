@@ -41,12 +41,12 @@ export default function PrintingHeroSection() {
                 <img 
                   src="general.png" 
                   alt="Printing Services" 
-                  className="w-[500px] h-[245px] object-cover "
+                  className="w-[504px] h-[360px] object-cover "
                 />
               </div>
 
               {/* Paint Splash Image */}
-              <div className="absolute -bottom-16 -left-16">
+              <div className="absolute -bottom-15 -left-16">
                 <img 
                   src="spilled-paint.png" 
                   alt="Paint Splash" 
