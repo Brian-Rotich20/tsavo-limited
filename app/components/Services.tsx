@@ -5,12 +5,12 @@ import React, { useEffect, useRef, useState } from "react";
 
 const services = [
   { title: "Brochures", image: "/brochure1.jpg" },
-  { title: "Flyers", image: "/flyer.jpg" },
+  { title: "Shirt Branding", image: "/shirt4.jpg" },
   { title: "Newsletters", image: "/newsletter.jpeg" },
-  { title: "Business Cards", image: "/business-card.jpeg" },
-  { title: "Envelopes", image: "/envelope.jpeg" },
+  { title: "Vehicle Branding", image: "/vehicle-branding2.jpg" },
+  { title: "Teardrop Banners", image: "/teardrop-banner.jpeg" },
   { title: "Label Stickers", image: "/label.jpeg" },
-  { title: "Business Posters", image: "/poster.jpeg" },
+  { title: "Business Cards  ", image: "/business-cards1.jpg" },
   { title: "Adhesive Posters", image: "/Adhesive Posters.jpeg" },
 ];
 

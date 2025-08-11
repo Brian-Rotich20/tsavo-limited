@@ -1,7 +1,7 @@
 'use client';
 import Link from "next/link"
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronDown, ChevronUp, Menu, X, ShoppingCart, Phone, Mail, MapPin } from 'lucide-react';
+import { ChevronDown, ChevronUp, Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 
 interface DropdownItem {
   name: string;
@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Organized categories for better navigation
   const categories: Category[] = [
@@ -77,6 +77,8 @@ const Navbar: React.FC = () => {
     }
   ];
 
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   const handleMouseEnter = (categoryName: string) => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -105,7 +107,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       {/* Top Contact Bar */}
-      <div className=" bg-black text-white font-mono py-1 hidden md:block">
+      <div className="bg-black text-white font-mono py-1 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-6">
@@ -150,45 +152,52 @@ const Navbar: React.FC = () => {
               {/* Home Link */}
               <Link 
                 href="/" 
-                className="px-4 py-2 text-sm font-medium text-grey-900 hover:bg-black hover:text-white rounded-md transition-all duration-200"
+                className="px-4 py-2 text-sm font-medium text-gray-900 hover:bg-black hover:text-white rounded-md transition-all duration-200"
               >
                 Home
               </Link>
 
               {/* Categories Dropdown */}
-              <div
-                className="relative group"
+              <div 
+                className="relative" 
                 onMouseEnter={() => handleMouseEnter('categories')}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="flex items-center px-4 py-2 text-sm font-medium text-grey-900 hover:bg-black hover:text-white rounded-md transition-all duration-200">
+                <button className="flex items-center px-4 py-2 text-sm font-medium text-gray-900 hover:bg-black hover:text-white rounded-md transition-all duration-200">
                   Our Services
-                  <ChevronDown size={16} className="ml-1 transform group-hover:rotate-180 transition-transform duration-200" />
+                  <ChevronDown 
+                    size={16} 
+                    className={`ml-1 transform transition-transform duration-200 ${
+                      activeDropdown === 'categories' ? 'rotate-180' : ''
+                    }`} 
+                  />
                 </button>
 
-                {/* Mega Dropdown Menu - Improved visibility */}
+                {/* Compact Horizontal Mega Dropdown Menu */}
                 {activeDropdown === 'categories' && (
-                  <div className="absolute top-full left-0 mt-1 w-[500px] bg-white rounded-lg shadow-2xl border border-gray-200 py-6 z-50">
-                    <div className="grid grid-cols-2 gap-6 px-6">
-                      {categories.map((category) => (
-                        <div key={category.name} className="space-y-3">
-                          <h3 className="text-sm font-semibold text-gray-800 border-b border-gray-200 pb-2">
-                            {category.name}
-                          </h3>
-                          <ul className="space-y-2">
-                            {category.items.map((item) => (
-                              <li key={item.name}>
-                                <Link
-                                  href={item.href}
-                                  className="block text-sm text-grey-900 hover:bg-black hover:text-white px-3 py-2 rounded transition-colors duration-150"
-                                >
-                                  {item.name}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 w-[800px] bg-white rounded-lg shadow-xl border border-gray-200 py-4 z-50">
+                    <div className="px-6">
+                      <div className="grid grid-cols-5 gap-4">
+                        {categories.map((category) => (
+                          <div key={category.name} className="space-y-2">
+                            <h3 className="text-xs font-semibold text-gray-800 border-b border-gray-200 pb-1">
+                              {category.name}
+                            </h3>
+                            <ul className="space-y-1">
+                              {category.items.map((item) => (
+                                <li key={item.name}>
+                                  <Link
+                                    href={item.href}
+                                    className="block text-xs text-gray-900 hover:bg-black hover:text-white px-2 py-1 rounded transition-colors duration-150"
+                                  >
+                                    {item.name}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -197,7 +206,7 @@ const Navbar: React.FC = () => {
               {/* About Link */}
               <Link 
                 href="/about" 
-                className="px-4 py-2 text-sm font-medium  text-grey-900 hover:bg-black hover:text-white  rounded-md transition-all duration-200"
+                className="px-4 py-2 text-sm font-medium text-gray-900 hover:bg-black hover:text-white rounded-md transition-all duration-200"
               >
                 About
               </Link>
@@ -205,7 +214,7 @@ const Navbar: React.FC = () => {
               {/* Contact Link */}
               <Link 
                 href="/contact" 
-                className="px-4 py-2 text-sm font-medium text-grey-900 hover:bg-black hover:text-white  rounded-md transition-all duration-200"
+                className="px-4 py-2 text-sm font-medium text-gray-900 hover:bg-black hover:text-white rounded-md transition-all duration-200"
               >
                 Contact
               </Link>
@@ -232,7 +241,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0  bg-opacity-50 z-40" onClick={() => setIsMobileMenuOpen(false)} />
+        <div className="lg:hidden fixed inset-0 bg-opacity-50 z-40" onClick={() => setIsMobileMenuOpen(false)} />
       )}
 
       {/* Mobile Menu - Moved to right side */}
@@ -263,8 +272,8 @@ const Navbar: React.FC = () => {
                   <span>info@tsavoprint.co.ke</span>
                 </div>
               </div>
-              <button className="w-full mt-3 px-4 py-2 text-sm font-medium text-grey-900 bg-black text-white rounded-md">
-              Feedback
+              <button className="w-full mt-3 px-4 py-2 text-sm font-medium text-white bg-black rounded-md">
+                Feedback
               </button>
             </div>
 
