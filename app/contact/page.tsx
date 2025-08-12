@@ -178,7 +178,7 @@ export default function ContactPage() {
                 <h2 className="text-xl font-semibold">Start Your Project</h2>
               </div>
 
-              <div className="space-y-4">
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -258,14 +258,14 @@ export default function ContactPage() {
                   ></textarea>
                 </div>
 
-                <div
-                  onClick={handleSubmit}
+                <button
+                  type="submit"
                   className="w-full bg-gradient-to-r from-red-600 to-orange-600 text-white py-2.5 px-5 rounded-lg font-medium hover:from-red-700 hover:to-orange-700 transition-all flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   Send Message
-                </div>
-              </div>
+                </button>
+              </form>
             </div>
 
             {/* FAQ Section */}
