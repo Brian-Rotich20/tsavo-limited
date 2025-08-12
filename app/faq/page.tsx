@@ -4,7 +4,7 @@ import { ArrowLeft, HelpCircle, ChevronDown, Phone, Mail, MapPin } from "lucide-
 import { useState } from "react";
 import Link from "next/link";
 
-export default function faqpage() {
+export default function FAQPage() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   const faqs = [

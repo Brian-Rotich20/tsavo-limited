@@ -3,7 +3,7 @@
 import { ArrowLeft, FileText, Scale } from "lucide-react";
 import Link from "next/link";
 
-export default function terms() {
+export default function Terms() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}

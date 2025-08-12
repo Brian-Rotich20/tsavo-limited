@@ -3,7 +3,7 @@
 import { ArrowLeft, Shield, Eye } from "lucide-react";
 import Link from "next/link";
 
-export default function privacy() {
+export default function Privacy() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
