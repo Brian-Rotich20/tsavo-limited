@@ -395,7 +395,7 @@ export const products: Product[] = [
     id: 'mugs',
     name: 'Mugs & Bottles',
     category: 'promo',
-    image: '/images/products/mugs-bottles.jpg',
+    image: '/bottle.jpg',
     description: 'Custom branded mugs, water bottles, and drinkware perfect for corporate gifts, events, and promotional campaigns.',
     features: [
       'Full Color Printing',
@@ -417,7 +417,7 @@ export const products: Product[] = [
     id: 'pens',
     name: 'Branded Pens',
     category: 'promo',
-    image: '/images/products/branded-pens.jpg',
+    image: '/ballpen-branding1.jpeg',
     description: 'Custom branded pens including ballpoint, gel, and premium pens for corporate gifts and promotional giveaways.',
     features: [
       'Various Pen Types',
@@ -436,32 +436,10 @@ export const products: Product[] = [
     pricing: 'Starting from KSH 45 per pen'
   },
   {
-    id: 'gifts',
-    name: 'Corporate Gifts',
-    category: 'promo',
-    image: '/images/products/corporate-gifts.jpg',
-    description: 'Premium corporate gifts including desk accessories, tech items, and executive gifts for clients and employees.',
-    features: [
-      'Premium Quality Items',
-      'Custom Packaging',
-      'Laser Engraving',
-      'Gift Wrapping Services',
-      'Bulk Discounts',
-      'Corporate Catalogs'
-    ],
-    specifications: [
-      'Categories: Tech, desk items, apparel, bags',
-      'Customization: Embossing, engraving, printing',
-      'Packaging: Gift boxes, bags, wrapping',
-      'MOQ: Varies by item'
-    ],
-    pricing: 'Starting from KSH 350 per gift'
-  },
-  {
     id: 'tickets',
     name: 'Event Tickets',
     category: 'promo',
-    image: '/images/products/event-tickets.jpg',
+    image: '/event-tickets.jpg',
     description: 'Professional event tickets with security features, sequential numbering, and custom designs for concerts, conferences, and events.',
     features: [
       'Sequential Numbering',
@@ -505,7 +483,7 @@ export const products: Product[] = [
     id: 'umbrellas',
     name: 'Umbrellas',
     category: 'promo',
-    image: '/umbrella.jpeg',
+    image: '/umbrella.jpg',
     description: 'Custom branded umbrellas for promotional giveaways, corporate gifts, and outdoor events with full-color printing options.',
     features: [
       'Full Color Printing',

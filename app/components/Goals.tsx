@@ -15,7 +15,7 @@ export default function Goals() {
             <h2 className="text-4xl md:text-5xl font-light text-slate-800 tracking-wide mb-2">
               Our Goals
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-orange-600 to-orange-400 mx-auto rounded-full"></div>
           </div>
         </div>
 

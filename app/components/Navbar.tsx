@@ -58,7 +58,6 @@ const Navbar: React.FC = () => {
       items: [
         { name: 'Mugs & Bottles', href: '/promo/mugs' },
         { name: 'Branded Pens', href: '/promo/pens' },
-        { name: 'Corporate Gifts', href: '/promo/gifts' },
         { name: 'Event Tickets', href: '/promo/tickets' },
         { name: 'Calendars', href: '/promo/calendars' },
         { name: 'Umbrellas', href: '/promo/umbrellas' },
@@ -113,15 +112,15 @@ const Navbar: React.FC = () => {
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <Phone size={14} />
-                <span>+254 700 123 456</span>
+                <span>+254 794 788 684</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail size={14} />
-                <span>info@tsavoprint.co.ke</span>
+                <span>info@tsavolprintlimited.co.ke</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin size={14} />
-                <span>Nairobi, Kenya</span>
+                <span>Mombasa, Kenya</span>
               </div>
             </div>
             <div className="text-sm">
@@ -265,11 +264,11 @@ const Navbar: React.FC = () => {
               <div className="space-y-2 text-sm">
                 <div className="flex items-center space-x-2 text-gray-600">
                   <Phone size={14} />
-                  <span>+254 700 123 456</span>
+                  <span>+254 794 788 684</span>
                 </div>
                 <div className="flex items-center space-x-2 text-gray-600">
                   <Mail size={14} />
-                  <span>info@tsavoprint.co.ke</span>
+                  <span>info@tsavolprintlimited.co.ke</span>
                 </div>
               </div>
               <button className="w-full mt-3 px-4 py-2 text-sm font-medium text-white bg-black rounded-md">

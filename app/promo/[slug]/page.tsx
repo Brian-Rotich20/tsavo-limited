@@ -86,16 +86,6 @@ export default async function PromoProductPage({ params }: PromoPageProps) {
               </div>
             )}
 
-            {/* Value Promise */}
-            <div className="bg-gray-50 rounded-xl p-6 space-y-3">
-              <h3 className="font-medium text-gray-900">Perfect for</h3>
-              <div className="space-y-2 text-sm text-gray-600">
-                <p>• Corporate events and conferences</p>
-                <p>• Customer appreciation gifts</p>
-                <p>• Brand awareness campaigns</p>
-                <p>• Volume discounts available</p>
-              </div>
-            </div>
 
             {/* Contact Section */}
             <div className="pt-4 border-t border-gray-100">
