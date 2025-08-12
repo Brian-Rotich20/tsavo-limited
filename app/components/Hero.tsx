@@ -26,7 +26,7 @@ export default function PrintingHeroSection() {
               <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-orange-300 mx-auto lg:mx-0 rounded-full"></div>
               
               <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl font-light">
-                We design and print business cards, brochures, stickers, and more — with 
+                We design and print business cards, banners, bronchures, stickers, and more — with 
                 <span className="font-medium text-orange-500"> branding services</span> to support your 
                 <span className="font-medium text-orange-500"> digital needs</span>.
               </p>
