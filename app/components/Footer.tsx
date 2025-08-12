@@ -93,6 +93,22 @@ const Footer = () => {
               Quick Links
             </h3>
             <ul className="space-y-2 text-sm">
+               <li>
+                <Link 
+                  href="/about" 
+                  className="hover:text-blue-600 transition-colors duration-200"
+                >
+                  About Us
+                </Link>
+              </li>
+               <li>
+                <Link 
+                  href="/contact" 
+                  className="hover:text-blue-600 transition-colors duration-200"
+                >
+                  Contact
+                </Link>
+              </li>
               <li>
                 <Link 
                   href="/faq" 
@@ -122,7 +138,7 @@ const Footer = () => {
 
           {/* Social Media */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-blue-900">
+            <h3 className="text-lg font-semibold mb-5 text-blue-900">
               Follow Us
             </h3>
             <div className="flex items-center space-x-4">
@@ -133,7 +149,7 @@ const Footer = () => {
                 aria-label="Facebook"
                 className="text-blue-700 hover:text-blue-900 transition-all duration-200 hover:scale-110"
               >
-                <Facebook size={20} />
+                <Facebook size={24} />
               </a>
               <a
                 href="https://twitter.com"
@@ -142,7 +158,7 @@ const Footer = () => {
                 aria-label="Twitter"
                 className="text-blue-500 hover:text-blue-700 transition-all duration-200 hover:scale-110"
               >
-                <Twitter size={20} />
+                <Twitter size={24} />
               </a>
               <a
                 href="https://instagram.com"
@@ -151,7 +167,7 @@ const Footer = () => {
                 aria-label="Instagram"
                 className="text-pink-600 hover:text-pink-800 transition-all duration-200 hover:scale-110"
               >
-                <Instagram size={20} />
+                <Instagram size={24} />
               </a>
             </div>
           </div>

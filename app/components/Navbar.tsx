@@ -66,10 +66,10 @@ const Navbar: React.FC = () => {
     {
       name: 'Apparel & Branding',
       items: [
+        { name: 'Vehicle Branding', href: '/apparel/vehicle' },
         { name: 'Screen Printing', href: '/apparel/screen-printing' },
         { name: 'Reflective Jackets', href: '/apparel/jackets' },
-        { name: 'Bag Branding', href: '/apparel/bags' },
-        { name: 'Vehicle Branding', href: '/apparel/vehicle' },
+        { name: 'Bag Branding', href: '/apparel/bags' },      
         { name: 'T-Shirt Printing', href: '/apparel/t-shirts' },
         { name: 'Bottle Branding', href: '/apparel/bottle' },
       ]

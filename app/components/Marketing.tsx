@@ -14,7 +14,7 @@ const MarketingCardsSection = () => {
       id: 2,
       title: "Bottle Branding",
       description: "Personalized water bottles with your logo",
-      image: "/bottle-branding.jpeg",
+      image: "/bottle-branding.jpg",
       category: "Corporate Branding"
     },
     {
@@ -92,7 +92,7 @@ const MarketingCardsSection = () => {
       id: 14,
       title: "Umbrella Branding",
       description: "Rain gear with custom prints",
-      image: "/umbrella.jpeg",
+      image: "/umbrella.jpg",
       category: "Outdoor Branding"
     },
     {

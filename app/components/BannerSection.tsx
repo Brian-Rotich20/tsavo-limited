@@ -86,7 +86,7 @@ export default function BannerSection() {
           </p>
 
           <button className="mt-6 bg-black text-white px-5 py-2 rounded hover:bg-gray-900 text-sm">
-            View all banner products →
+            Banner products 
           </button>
         </div>
       </div>

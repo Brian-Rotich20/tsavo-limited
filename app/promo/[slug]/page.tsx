@@ -142,9 +142,6 @@ export default async function PromoProductPage({ params }: PromoPageProps) {
                   <p className="text-xs text-gray-600 font-light line-clamp-2">
                     {relatedProduct.description}
                   </p>
-                  {relatedProduct.pricing && (
-                    <p className="text-xs text-gray-900 font-medium mt-1">{relatedProduct.pricing}</p>
-                  )}
                 </Link>
               ))
             }

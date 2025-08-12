@@ -283,7 +283,7 @@ export const products: Product[] = [
     id: 'vinyl',
     name: 'Vinyl Stickers',
     category: 'stickers',
-    image: '/images/products/vinyl-stickers.jpg',
+    image: '/vinyl.jpeg',
     description: 'Durable vinyl stickers perfect for outdoor use, vehicle decals, promotional stickers, and long-lasting applications.',
     features: [
       'Weather Resistant',
@@ -305,7 +305,7 @@ export const products: Product[] = [
     id: 'labels',
     name: 'Product Labels',
     category: 'stickers',
-    image: '/images/products/product-labels.jpg',
+    image: '/labels.jpeg',
     description: 'Professional product labels for packaging, branding, ingredients, barcodes, and product information.',
     features: [
       'Food Safe Materials',
@@ -327,7 +327,7 @@ export const products: Product[] = [
     id: 'can-tin',
     name: 'Can & Tin Labels',
     category: 'stickers',
-    image: '/images/products/can-tin-labels.jpg',
+    image: '/can-labels.jpeg',
     description: 'Specialized labels for metal containers, cans, and tins with strong adhesion and moisture resistance.',
     features: [
       'Metal Surface Adhesion',
@@ -349,7 +349,7 @@ export const products: Product[] = [
     id: 'id-tags',
     name: 'ID Tags',
     category: 'stickers',
-    image: '/images/products/id-tags.jpg',
+    image: '/id-tags.jpeg',
     description: 'Professional ID tags and badges for events, employees, visitors, and identification purposes with various attachment options.',
     features: [
       'Durable Materials',
@@ -371,7 +371,7 @@ export const products: Product[] = [
     id: 'adhesive',
     name: 'Adhesive Prints',
     category: 'stickers',
-    image: '/images/products/adhesive-prints.jpg',
+    image: '/adhesive-prints.jpeg',
     description: 'Custom adhesive prints for any surface including walls, floors, vehicles, and equipment with permanent or removable options.',
     features: [
       'Surface Specific Adhesives',
@@ -461,7 +461,7 @@ export const products: Product[] = [
     id: 'calendars',
     name: 'Calendars',
     category: 'promo',
-    image: '/images/products/calendars.jpg',
+    image: '/calendars.jpeg',
     description: 'Custom branded calendars including wall, desk, and pocket calendars for year-round brand visibility and utility.',
     features: [
       'Multiple Calendar Types',
@@ -508,7 +508,7 @@ export const products: Product[] = [
     id: 'screen-printing',
     name: 'Screen Printing',
     category: 'apparel',
-    image: '/images/products/screen-printing.jpg',
+    image: '/screen-printing.jpeg',
     description: 'High-quality screen printing for t-shirts, uniforms, and promotional apparel with vibrant colors and durability.',
     features: [
       'Vibrant Color Reproduction',
@@ -530,7 +530,7 @@ export const products: Product[] = [
     id: 'jackets',
     name: 'Reflective Jackets',
     category: 'apparel',
-    image: '/images/products/reflective-jackets.jpg',
+    image: '/reflective-jackets.jpeg',
     description: 'High-visibility safety jackets with reflective strips and custom branding for construction, security, and industrial use.',
     features: [
       'High-Visibility Colors',
