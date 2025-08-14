@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.tsavolprintlimited.co.ke
+
+# Sitemaps
+Sitemap: https://www.tsavolprintlimited.co.ke/sitemap.xml
