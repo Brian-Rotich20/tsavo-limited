@@ -11,17 +11,17 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-gray-700 border-t">
+    <footer className="bg-[#132235] text-white border-t">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Logo Section - Full width on mobile, centered */}
         <div className="flex flex-col items-center md:items-start mb-6 md:mb-8">
           <div className="text-3xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
             Tsavol
           </div>
-          <div className="text-sm text-gray-500 -mt-1">
+          <div className="text-sm text-white-mt-1">
             Print & E-design Ltd
           </div>
-          <p className="text-sm italic text-green-800 font-semibold mt-3">
+          <p className="text-sm italic text-white font-semibold mt-3">
             Home of Creativity
           </p>
         </div>
@@ -138,7 +138,7 @@ const Footer = () => {
 
           {/* Social Media */}
           <div>
-            <h3 className="text-lg font-semibold mb-5 text-blue-900">
+            <h3 className="text-lg font-semibold mb-5 text-white">
               Follow Us
             </h3>
             <div className="flex items-center space-x-4">
@@ -175,7 +175,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="bg-gray-100 py-4 text-center text-sm text-gray-600 border-t border-gray-200">
+      <div className="bg-[#132235] py-4 text-center text-sm text-white border-t border-gray-200">
         &copy; {new Date().getFullYear()} Tsavo Print & E-Design Ltd. All rights reserved.
       </div>
     </footer>
