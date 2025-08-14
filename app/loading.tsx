@@ -14,7 +14,8 @@ export default function Loading() {
 
     const checkReady = setInterval(() => {
       const elapsed = Date.now() - startTime;
-      if (elapsed >= 3000 && isMounted) {
+      // Increased delay from 3000ms to 4500ms (4.5 seconds)
+      if (elapsed >= 4500 && isMounted) {
         setFadeOut(true); // Start fading out
         setTimeout(() => {
           setShowSpinner(false); // Remove from DOM after fade
