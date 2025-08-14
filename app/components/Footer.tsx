@@ -16,7 +16,7 @@ const Footer = () => {
         {/* Logo Section - Full width on mobile, centered */}
         <div className="flex flex-col items-center md:items-start mb-6 md:mb-8">
           <div className="text-3xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
-            Tsavo
+            Tsavol
           </div>
           <div className="text-sm text-gray-500 -mt-1">
             Print & E-design Ltd
@@ -143,7 +143,7 @@ const Footer = () => {
             </h3>
             <div className="flex items-center space-x-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=100071754747259"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -152,7 +152,7 @@ const Footer = () => {
                 <Facebook size={24} />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/TsavolP"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Twitter"
@@ -161,7 +161,7 @@ const Footer = () => {
                 <Twitter size={24} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/tsavolprinters/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"

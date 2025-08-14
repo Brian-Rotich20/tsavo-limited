@@ -1,7 +1,7 @@
 'use client';
 import Link from "next/link"
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronDown, ChevronUp, Menu, X, Phone, Mail, MapPin } from 'lucide-react';
+import { ChevronDown, ChevronUp, Menu, X, Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
 
 interface DropdownItem {
   name: string;
@@ -17,6 +17,7 @@ const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Organized categories for better navigation
@@ -78,6 +79,17 @@ const Navbar: React.FC = () => {
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleMouseEnter = (categoryName: string) => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -105,142 +117,192 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      {/* Top Contact Bar */}
-      <div className="bg-black text-white font-mono py-1 hidden md:block">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center text-sm">
-            <div className="flex items-center space-x-6">
-              <div className="flex items-center space-x-2">
-                <Phone size={14} />
-                <span>+254 794 788 684</span>
+      {/* Fixed Navbar Container */}
+      <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'transform translate-y-0' : ''
+      }`}>
+        
+        {/* Top Contact Bar */}
+        <div className={`bg-black text-white font-mono py-1 transition-all duration-300 ${
+          isScrolled ? 'hidden md:hidden' : 'hidden md:block'
+        }`}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center text-sm">
+              <div className="flex items-center space-x-6">
+                <div className="flex items-center space-x-2">
+                  <Phone size={14} />
+                  <span>+254 794 788 684</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Mail size={14} />
+                  <span>info@tsavolprintlimited.co.ke</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <MapPin size={14} />
+                  <span>Mombasa, Kenya</span>
+                </div>
               </div>
-              <div className="flex items-center space-x-2">
-                <Mail size={14} />
-                <span>info@tsavolprintlimited.co.ke</span>
+              
+              {/* Right side with hours and social media */}
+              <div className="flex items-center space-x-4">
+                <div className="text-sm">
+                  <span className="opacity-75">Mon - Fri: 8AM - 6PM | Sat: 9AM - 4PM</span>
+                </div>
+                
+                {/* Social Media Icons */}
+                <div className="flex items-center space-x-3 ml-4 pl-4 border-l border-gray-600">
+                  <a 
+                    href="https://www.facebook.com/profile.php?id=100071754747259" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-blue-400 transform hover:scale-110 transition-all duration-200"
+                  >
+                    <Facebook size={16} />
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/tsavolprinters/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-pink-400 transform hover:scale-110 transition-all duration-200"
+                  >
+                    <Instagram size={16} />
+                  </a>
+                  <a 
+                    href="https://x.com/TsavolP" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-blue-300 transform hover:scale-110 transition-all duration-200"
+                  >
+                    <Twitter size={16} />
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center space-x-2">
-                <MapPin size={14} />
-                <span>Mombasa, Kenya</span>
-              </div>
-            </div>
-            <div className="text-sm">
-              <span className="opacity-75">Mon - Fri: 8AM - 6PM | Sat: 9AM - 4PM</span>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Main Navigation */}
-      <nav className="bg-white shadow-lg relative z-50 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <div className="flex-shrink-0">
-              <div className="flex flex-col">
-                <div className="text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
-                  Tsavo 
-                </div>
-                <div className="text-xs text-pink-600 -mt-1 font-medium">
-                 Print & E-design Ltd
+        {/* Main Navigation */}
+        <nav className={`bg-white shadow-lg relative border-b border-gray-100 transition-all duration-300 ${
+          isScrolled ? 'shadow-2xl' : 'shadow-lg'
+        }`}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              {/* Logo */}
+              <div className="flex-shrink-0">
+                <div className="flex flex-col">
+                  <div className="text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
+                    Tsavol 
+                  </div>
+                  <div className="text-xs text-pink-600 -mt-1 font-medium">
+                   Print & E-design Ltd
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-1">
-              {/* Home Link */}
-              <Link 
-                href="/" 
-                className="px-4 py-2 text-sm font-medium text-gray-900 hover:bg-black hover:text-white rounded-md transition-all duration-200"
-              >
-                Home
-              </Link>
+              {/* Desktop Navigation */}
+              <div className="hidden lg:flex items-center space-x-1">
+                {/* Home Link */}
+                <Link 
+                  href="/" 
+                  className="px-4 py-2 text-sm font-medium text-gray-900 hover:bg-black hover:text-white rounded-md transition-all duration-200"
+                >
+                  Home
+                </Link>
 
-              {/* Categories Dropdown */}
-              <div 
-                className="relative" 
-                onMouseEnter={() => handleMouseEnter('categories')}
-                onMouseLeave={handleMouseLeave}
-              >
-                <button className="flex items-center px-4 py-2 text-sm font-medium text-gray-900 hover:bg-black hover:text-white rounded-md transition-all duration-200">
-                  Our Services
-                  <ChevronDown 
-                    size={16} 
-                    className={`ml-1 transform transition-transform duration-200 ${
-                      activeDropdown === 'categories' ? 'rotate-180' : ''
-                    }`} 
-                  />
-                </button>
+                {/* Categories Dropdown */}
+                <div 
+                  className="relative" 
+                  onMouseEnter={() => handleMouseEnter('categories')}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <button className="flex items-center px-4 py-2 text-sm font-medium text-gray-900 hover:bg-black hover:text-white rounded-md transition-all duration-200">
+                    Our Services
+                    <ChevronDown 
+                      size={16} 
+                      className={`ml-1 transform transition-transform duration-200 ${
+                        activeDropdown === 'categories' ? 'rotate-180' : ''
+                      }`} 
+                    />
+                  </button>
 
-                {/* Compact Horizontal Mega Dropdown Menu */}
-                {activeDropdown === 'categories' && (
-                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 w-[800px] bg-white rounded-lg shadow-xl border border-gray-200 py-4 z-50">
-                    <div className="px-6">
-                      <div className="grid grid-cols-5 gap-4">
-                        {categories.map((category) => (
-                          <div key={category.name} className="space-y-2">
-                            <h3 className="text-xs font-semibold text-gray-800 border-b border-gray-200 pb-1">
-                              {category.name}
-                            </h3>
-                            <ul className="space-y-1">
-                              {category.items.map((item) => (
-                                <li key={item.name}>
-                                  <Link
-                                    href={item.href}
-                                    className="block text-xs text-gray-900 hover:bg-black hover:text-white px-2 py-1 rounded transition-colors duration-150"
-                                  >
-                                    {item.name}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
+                  {/* Compact Horizontal Mega Dropdown Menu */}
+                  {activeDropdown === 'categories' && (
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 w-[800px] bg-white rounded-lg shadow-xl border border-gray-200 py-4 z-50">
+                      <div className="px-6">
+                        <div className="grid grid-cols-5 gap-4">
+                          {categories.map((category) => (
+                            <div key={category.name} className="space-y-2">
+                              <h3 className="text-xs font-semibold text-gray-800 border-b border-gray-200 pb-1">
+                                {category.name}
+                              </h3>
+                              <ul className="space-y-1">
+                                {category.items.map((item) => (
+                                  <li key={item.name}>
+                                    <Link
+                                      href={item.href}
+                                      className="block text-xs text-gray-900 hover:bg-black hover:text-white px-2 py-1 rounded transition-colors duration-150"
+                                    >
+                                      {item.name}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
+
+                {/* About Link */}
+                <Link 
+                  href="/about" 
+                  className="px-4 py-2 text-sm font-medium text-gray-900 hover:bg-black hover:text-white rounded-md transition-all duration-200"
+                >
+                  About
+                </Link>
+
+                {/* Contact Link */}
+                <Link 
+                  href="/contact" 
+                  className="px-4 py-2 text-sm font-medium text-gray-900 hover:bg-black hover:text-white rounded-md transition-all duration-200"
+                >
+                  Contact
+                </Link>
               </div>
 
-              {/* About Link */}
-              <Link 
-                href="/about" 
-                className="px-4 py-2 text-sm font-medium text-gray-900 hover:bg-black hover:text-white rounded-md transition-all duration-200"
-              >
-                About
-              </Link>
+              {/* Right Side Actions */}
+              <div className="flex items-center space-x-3">
+                {/* Enhanced Feedback Button */}
+                <a
+                  href="mailto:info@tsavolprintlimited.co.ke"
+                  className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-gray-800 to-black rounded-md hover:from-red-600 hover:to-orange-500 transform hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                >
+                  Feedback
+                </a>
 
-              {/* Contact Link */}
-              <Link 
-                href="/contact" 
-                className="px-4 py-2 text-sm font-medium text-gray-900 hover:bg-black hover:text-white rounded-md transition-all duration-200"
-              >
-                Contact
-              </Link>
-            </div>
-
-            {/* Right Side Actions */}
-            <div className="flex items-center space-x-3">
-              {/* Get Quote Button */}
-              <button className="hidden sm:block px-4 py-2 text-sm font-medium text-white bg-black hover:bg-gray-900 rounded-md transition-all duration-200 shadow-md">
-                Feedback
-              </button>
-
-              {/* Mobile menu button */}
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-gray-700 hover:text-white hover:bg-gradient-to-r hover:from-red-600 hover:to-orange-500 rounded-md transition-all duration-200"
-              >
-                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
+                {/* Mobile menu button */}
+                <button
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="lg:hidden p-2 text-gray-700 hover:text-white hover:bg-gradient-to-r hover:from-red-600 hover:to-orange-500 rounded-md transition-all duration-200"
+                >
+                  {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
+
+      {/* Spacer to prevent content from hiding behind fixed navbar */}
+      <div className={`transition-all duration-300 ${
+        isScrolled ? 'h-16' : 'h-20'
+      }`}></div>
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 bg-opacity-50 z-40" onClick={() => setIsMobileMenuOpen(false)} />
+        <div className="lg:hidden fixed inset-0  bg-opacity-50 z-40" onClick={() => setIsMobileMenuOpen(false)} />
       )}
 
       {/* Mobile Menu - Moved to right side */}
@@ -251,7 +313,7 @@ const Navbar: React.FC = () => {
             <div className="flex justify-center mb-6 pb-4 border-b border-gray-200">
               <div className="flex flex-col text-center">
                 <div className="text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
-                  Tsavo 
+                  Tsavol
                 </div>
                 <div className="text-xs text-pink-600 -mt-1 font-medium">
                  Print & E-design Ltd
@@ -259,23 +321,7 @@ const Navbar: React.FC = () => {
               </div>
             </div>
 
-            {/* Mobile Contact Info */}
-            <div className="bg-gray-50 rounded-lg p-4 mb-6">
-              <div className="space-y-2 text-sm">
-                <div className="flex items-center space-x-2 text-gray-600">
-                  <Phone size={14} />
-                  <span>+254 794 788 684</span>
-                </div>
-                <div className="flex items-center space-x-2 text-gray-600">
-                  <Mail size={14} />
-                  <span>info@tsavolprintlimited.co.ke</span>
-                </div>
-              </div>
-              <button className="w-full mt-3 px-4 py-2 text-sm font-medium text-white bg-black rounded-md">
-                Feedback
-              </button>
-            </div>
-
+ 
             {/* Mobile Navigation Links with Dividers */}
             <div className="space-y-1 mb-6">
               <Link 
@@ -342,6 +388,55 @@ const Navbar: React.FC = () => {
               >
                 Contact
               </Link>
+                         {/* Mobile Contact Info */}
+            <div className="bg-gray-50 rounded-lg p-4 mb-6">
+              <div className="space-y-2 text-sm">
+                <div className="flex items-center space-x-2 text-gray-600">
+                  <Phone size={14} />
+                  <span>+254 794 788 684</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-600">
+                  <Mail size={14} />
+                  <span>info@tsavolprintlimited.co.ke</span>
+                </div>
+              </div>
+              
+              {/* Mobile Social Media */}
+              <div className="flex justify-center space-x-4 mt-4 pt-3 border-t border-gray-200">
+                <a 
+                  href="https://www.facebook.com/profile.php?id=100071754747259" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-blue-500 transform hover:scale-110 transition-all duration-200"
+                >
+                  <Facebook size={20} />
+                </a>
+                <a 
+                  href="https://www.instagram.com/tsavolprinters/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-pink-500 transform hover:scale-110 transition-all duration-200"
+                >
+                  <Instagram size={20} />
+                </a>
+                <a 
+                  href="https://x.com/TsavolP" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-blue-400 transform hover:scale-110 transition-all duration-200"
+                >
+                  <Twitter size={20} />
+                </a>
+              </div>
+              
+              <a
+                href="mailto:info@tsavolprintlimited.co.ke"
+                className="w-full mt-3  py-2 text-sm font-medium text-white bg-gradient-to-r from-gray-800 to-black rounded-md text-center block hover:from-red-600 hover:to-orange-500 cursor-pointer hover:scale-105 transition-all duration-300"
+              >
+                Feedback
+              </a>
+            </div>
+
             </div>
           </div>
         </div>
