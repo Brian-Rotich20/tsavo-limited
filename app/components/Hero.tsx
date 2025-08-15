@@ -1,4 +1,10 @@
 import React from 'react';
+import localFont from 'next/font/local';
+ const logoFont = localFont({
+    src: '../fonts/Kintagina.ttf',
+    weight: '400',
+    style: 'normal',
+  })
 
 export default function PrintingHeroSection() {
   return (
@@ -17,14 +23,16 @@ export default function PrintingHeroSection() {
           <div className="lg:w-1/2 space-y-6 sm:space-y-8 text-center lg:text-left">
             <div className="space-y-4 sm:space-y-6">
               {/* Animated heading */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                <span className="block text-gray-900 font-serif tracking-tight animate-pulse">
-                  High-Quality
-                </span>
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-yellow-600 to-yellow-700 font-serif tracking-tight">
-                  Prints.
-                </span>
-              </h1>
+             <h1
+              className={`${logoFont.className} text-6xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight`}
+            >
+              <span className="block text-gray-900 tracking-tight animate-pulse">
+                High-Quality
+              </span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-yellow-600 to-yellow-700 tracking-tight">
+                Prints.
+              </span>
+            </h1>
               
               {/* Animated divider */}
               <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-orange-500 to-orange-300 mx-auto lg:mx-0 rounded-full animate-pulse"></div>

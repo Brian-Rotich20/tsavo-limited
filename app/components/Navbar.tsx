@@ -1,8 +1,9 @@
+// This is for tsavolprintlimited.co.ke
 'use client';
 import Link from "next/link"
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown, ChevronUp, Menu, X, Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
-
+import localFont from 'next/font/local';
 interface DropdownItem {
   name: string;
   href: string;
@@ -12,6 +13,11 @@ interface Category {
   name: string;
   items: DropdownItem[];
 }
+ const logoFont = localFont({
+    src: '../fonts/Kintagina.ttf',
+    weight: '400',
+    style: 'normal',
+  })
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -190,8 +196,10 @@ const Navbar: React.FC = () => {
               {/* Logo */}
               <div className="flex-shrink-0">
                 <div className="flex flex-col">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
-                    Tsavol 
+                  <div
+                    className={`${logoFont.className} text-4xl font-bold bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent`}
+                  >
+                    Tsavol
                   </div>
                   <div className="text-xs text-pink-600 -mt-1 font-medium">
                    Print & E-design Ltd
@@ -312,9 +320,11 @@ const Navbar: React.FC = () => {
             {/* Logo in Mobile Menu */}
             <div className="flex justify-center mb-6 pb-4 border-b border-gray-200">
               <div className="flex flex-col text-center">
-                <div className="text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
-                  Tsavol
-                </div>
+               <div
+                className={`${logoFont.className} text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent`}
+              >
+                Tsavol
+              </div>
                 <div className="text-xs text-pink-600 -mt-1 font-medium">
                  Print & E-design Ltd
                 </div>
