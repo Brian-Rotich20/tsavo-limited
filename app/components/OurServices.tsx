@@ -13,13 +13,13 @@ const services: Service[] = [
     id: 1,
     title: "Screen Printing & Embroidery",
     description: "Custom prints on T-shirts, polo shirts, hoodies, towels, and more. Bulk orders available with high-quality finishes.",
-    color: "from-blue-500 to-purple-600"
+    color: "from-orange-500 to-red-600"
   },
   {
     id: 2,
     title: "Signage & Large Format Printing",
     description: "3D/2D signs, lightboxes, banners, and custom outdoor displays with professional, durable finishes.",
-    color: "from-green-500 to-teal-600"
+    color: "from-orange-500 to-red-600"
   },
   {
     id: 3,
@@ -31,19 +31,19 @@ const services: Service[] = [
     id: 4,
     title: "Creative Design",
     description: "Logos, brochures, flyers, and marketing materials with fast turnaround and professional layouts.",
-    color: "from-pink-500 to-rose-600"
+    color: "ffrom-orange-500 to-red-600"
   },
   {
     id: 5,
     title: "Offset Printing",
     description: "High-quality, cost-effective printing for bulk projects with excellent color accuracy and paper variety.",
-    color: "from-indigo-500 to-blue-600"
+    color: "from-orange-500 to-red-600"
   },
   {
     id: 6,
     title: "Digital Printing",
     description: "Quick printing for brochures, books, invitations, menus, and corporate stationery.",
-    color: "from-cyan-500 to-blue-600"
+    color: "from-orange-500 to-red-600"
   }
 ];
 

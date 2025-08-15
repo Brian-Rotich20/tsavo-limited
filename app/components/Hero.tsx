@@ -24,7 +24,7 @@ export default function PrintingHeroSection() {
             <div className="space-y-4 sm:space-y-6">
               {/* Animated heading */}
              <h1
-              className={`${logoFont.className} text-6xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight`}
+              className={`${logoFont.className} text-6xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight`}
             >
               <span className="block text-gray-900 tracking-tight animate-pulse">
                 High-Quality
