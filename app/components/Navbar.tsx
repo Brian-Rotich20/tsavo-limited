@@ -194,18 +194,29 @@ const Navbar: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               {/* Logo */}
+              {/* Logo */}
               <div className="flex-shrink-0">
-                <div className="flex flex-col">
-                  <div
-                    className={`${logoFont.className} text-4xl font-bold bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent`}
-                  >
-                    Tsavol
-                  </div>
-                  <div className="text-xs text-pink-600 -mt-1 font-medium">
-                   Print & E-design Ltd
+                <div className="flex items-center space-x-3">
+                  <img
+                    src="/tsavo-logo.jpeg"
+                    alt="Tsavol Logo"
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 object-contain rounded-full"
+                  />
+                  <div className="flex flex-col">
+                    <div
+                      className={`${logoFont.className} text-4xl font-bold bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent`}
+                    >
+                      Tsavol
+                    </div>
+                    <div className="text-xs text-pink-600 -mt-1 font-medium">
+                      Print & E-design Ltd
+                    </div>
                   </div>
                 </div>
               </div>
+
 
               {/* Desktop Navigation */}
               <div className="hidden lg:flex items-center space-x-1">
