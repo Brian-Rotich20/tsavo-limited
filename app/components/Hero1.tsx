@@ -50,7 +50,7 @@ const PrintingHeroSection: React.FC = () => {
           {/* Stats with Vertical Dividers - Responsive */}
           <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 lg:gap-8 pt-6 lg:pt-8">
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-white drop-shadow-lg">500+</div>
+              <div className="text-2xl sm:text-3xl font-bold text-white drop-shadow-lg">200+</div>
               <div className="text-sm sm:text-lg lg:text-xl text-blue-200 drop-shadow">Projects</div>
             </div>
             
@@ -66,7 +66,7 @@ const PrintingHeroSection: React.FC = () => {
             <div className="h-12 sm:h-16 w-px bg-white/40"></div>
             
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-white drop-shadow-lg">5+</div>
+              <div className="text-2xl sm:text-3xl font-bold text-white drop-shadow-lg">6+</div>
               <div className="text-sm sm:text-lg lg:text-xl text-blue-200 drop-shadow">Years Experience</div>
             </div>
           </div>
