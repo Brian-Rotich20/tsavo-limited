@@ -12,7 +12,7 @@ const PrintingHeroSection: React.FC = () => {
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
         {/* Left Content */}
         <div className="flex-1 text-white space-y-6">
-          <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+          <h1 className="text-3xl lg:text-6xl font-bold leading-tight">
             Tsavol Print Limited
           </h1>
           
