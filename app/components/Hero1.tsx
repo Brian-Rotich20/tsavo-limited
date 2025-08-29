@@ -4,12 +4,21 @@ import React, { useState, useEffect } from 'react';
 import { CheckCircle } from 'lucide-react';
 
 const PrintingHeroSection: React.FC = () => {
-  // Use a static image path instead of loading from the file system
-  const imageData = '/hero3.jpeg'; // Place hero3.jpeg in your public folder
+ 
+  const imageData = '/hero3.jpeg';
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-slate-700 via-orange-700 to-orange-500 flex items-center">
-      <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
+    <div className="min-h-screen bg-gradient-to-r from-slate-700 via-orange-700 to-orange-500 flex items-center relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src={imageData}
+          alt="Professional printing workspace" 
+          className="absolute inset-0 w-full h-full object-cover object-left-top lg:object-top opacity-20"
+        />
+      </div>
+
+      <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12 relative z-10">
         {/* Left Content */}
         <div className="flex-1 text-white space-y-6">
           <h1 className="text-3xl lg:text-6xl font-bold leading-tight">
@@ -35,18 +44,26 @@ const PrintingHeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="flex gap-8 pt-8">
-            <div>
-              <div className="text-3xl font-bold text-white">500+</div>
+          {/* Stats with Vertical Dividers */}
+          <div className="flex items-center gap-8 pt-8">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white">200+</div>
               <div className="text-xl text-blue-200">Projects</div>
             </div>
-            <div>
+            
+            {/* Vertical Divider */}
+            <div className="h-16 w-px bg-white/30"></div>
+            
+            <div className="text-center">
               <div className="text-3xl font-bold text-white">200+</div>
               <div className="text-xl text-blue-200">Happy Clients</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-white">5+</div>
+            
+            {/* Vertical Divider */}
+            <div className="h-16 w-px bg-white/30"></div>
+            
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white">7+</div>
               <div className="text-xl text-blue-200">Years Experience</div>
             </div>
           </div>
@@ -69,7 +86,7 @@ const PrintingHeroSection: React.FC = () => {
             {/* Content overlay */}
             <div className="relative z-10">
               <div className="text-center">
-                <h2 className="text-2xl font-bold text-orange-600 mb-2">
+                <h2 className="text-2xl text-orange-600 mb-2">
                   Get Your Project Started
                 </h2>
               </div>
