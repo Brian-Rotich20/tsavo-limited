@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { Shirt, Signpost, Target, PenTool, Printer, FileText } from 'lucide-react';
+import Link from 'next/link';
 
 interface Service {
   id: number;
@@ -97,10 +98,12 @@ const OurServices: React.FC = () => {
           <p className="text-gray-600 mb-6">
             Need something specific? We offer custom solutions tailored to your needs.
           </p>
+          <Link href="/contact">
           <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200">
             Get Quote
           </button>
-        </div>
+        </Link>
+                </div>
         
       </div>
     </section>
