@@ -130,7 +130,7 @@ const OurServices: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block">
-            <h2 className="text-5xl font-bold text-gray-800 mb-4 bg-gradient-to-r from-orange-600 to-yellow-600 bg-clip-text text-transparent">
+            <h2 className="text-5xl font-bold text-gray-800 mb-4 bg-gradient-to-r from-orange-600 to-yellow-600 bg-clip-text">
               Our Services
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-orange-500 to-yellow-600 mx-auto rounded-full" />
