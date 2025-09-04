@@ -296,7 +296,7 @@ const Navbar: React.FC = () => {
                 {/* Enhanced Feedback Button */}
                 <a
                   href="mailto:info@tsavolprintlimited.co.ke"
-                  className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-gray-800 to-black rounded-md hover:from-red-600 hover:to-orange-500 transform hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                  className=" hidden md:block px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-gray-800 to-black rounded-md hover:from-red-600 hover:to-orange-500 transform hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-pointer"
                 >
                   Feedback
                 </a>
